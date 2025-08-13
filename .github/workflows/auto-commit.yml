@@ -1,0 +1,36 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Configure git
+        run: |
+          git config --local user.email "vijendrasaini@startbitsolutions.com"
+          git config --local user.name "Vijendra Kumar Saini"
+          
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit and push changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git add .
+          git commit -m "Auto-commit: $(date)"
+          git push
