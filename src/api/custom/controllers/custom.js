@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * A set of functions called "actions" for `custom` for blog create
+ * A set of functions called "actions" for `custom` for blog
  */
 
  const blogQueue = require("./blogQueue");
