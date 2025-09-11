@@ -1,7 +1,7 @@
 const Queue = require('bull');
 const Redis = require('ioredis');
 
-// Initialize Redis connection info
+// Initialize Redis connection info for blogs queue
 const redis = new Redis();
 
 // Create a queue
