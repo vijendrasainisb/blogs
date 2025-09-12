@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * custom service
+ * custom service to create custom service functions
  */
 
 module.exports = () => ({});
