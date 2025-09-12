@@ -10,7 +10,7 @@ module.exports = {
   GetMessage: async (ctx, next) => {
     try {
       const Body = ctx.request.body;
-      // console.log(Body.Title,'sss', Body);
+      // console.log(Body.Title,'sss');
       if (!Body || !Body.Title) {
         ctx.throw(400, 'Title is required field');
       }
