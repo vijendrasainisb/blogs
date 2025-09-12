@@ -10,9 +10,9 @@ module.exports = {
   GetMessage: async (ctx, next) => {
     try {
       const Body = ctx.request.body;
-      // console.log(Body.Title,'sss');
+      // console.log(Body.Title,'sssppp');
       if (!Body || !Body.Title) {
-        ctx.throw(400, 'Title is required field');
+        ctx.throw(400, 'Title is required field in post');
       }
 
       const { Title, Description, Image, Status } = Body;
