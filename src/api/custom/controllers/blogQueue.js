@@ -27,7 +27,7 @@ blogQueue.process(async (job) => {
     if (existingBlog.length > 0) {
       console.log('Blog with this title already exists');
     } else {
-      // If not, create a new blog post
+      // If not, create a new blog post in db process
       
       const newBlog = await strapi.entityService.create('api::blog.blog', {
         data: {
