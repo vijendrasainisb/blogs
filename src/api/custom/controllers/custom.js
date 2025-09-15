@@ -17,7 +17,7 @@ module.exports = {
 
       const { Title, Description, Image, Status } = Body;
 
-        // Loop to add 500 posts to the queue at a time
+        // Loop to add 500 posts to the queue
       for (let i = 1; i <= 5000; i++) {
         const postTitle = `${Title}${i}`;
         
