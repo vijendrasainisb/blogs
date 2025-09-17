@@ -17,7 +17,7 @@ blogQueue.process(async (job) => {
   const { Title, Description, Image, Status } = job.data;
 
   try {
-     // Check if a blog with the same title already exists in db process trim title
+     // Check if a blog with the same title already exists in db process
      const existingBlog = await strapi.entityService.findMany('api::blog.blog', {
       filters: { Title: Title.trim() },
       limit: 1,        
