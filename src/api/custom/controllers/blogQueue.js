@@ -12,7 +12,7 @@ const blogQueue = new Queue('blogQueue', {
   },
 });
 
-// Define a job processor for process output Queue for blogs
+// Define a job processor for process output Queue
 blogQueue.process(async (job) => {
   const { Title, Description, Image, Status } = job.data;
 
