@@ -12,7 +12,7 @@ module.exports = {
       const Body = ctx.request.body;
       // console.log(Body.Title,'sssppp');
       if (!Body || !Body.Title) {
-        ctx.throw(400, 'Title is required field in post');
+        ctx.throw(400, 'Title is required field in post info');
       }
 
       const { Title, Description, Image, Status } = Body;
