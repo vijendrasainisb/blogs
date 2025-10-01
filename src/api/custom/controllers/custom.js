@@ -30,7 +30,7 @@ module.exports = {
       }
 
         ctx.body = {
-          message: 'Horray! New blog created successfully'
+          message: 'Horray! New blog created successfully in strapi'
         };
       
     } catch (err) {
