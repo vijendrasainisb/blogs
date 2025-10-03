@@ -36,7 +36,7 @@ jobs:
           git commit -m "Auto-commit: $(date)"
           git push
 
-        - name: Update demo file
-        run: |
+          - name: Update demo file
+          run: |
           echo "Last run: $(date)" >> demo_test.txt
 
