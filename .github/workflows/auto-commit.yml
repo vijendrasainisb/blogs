@@ -32,11 +32,11 @@ jobs:
       - name: Commit and push changes
         if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
-          git add .
+          git add demo_test.txt
           git commit -m "Auto-commit: $(date)"
           git push
 
-          - name: Update demo file
-          run: |
+      - name: Update demo file
+        run: |
           echo "Last run: $(date)" >> demo_test.txt
 
