@@ -17,7 +17,7 @@ module.exports = {
 
       const { Title, Description, Image, Status } = Body;
 
-        // Loop to add 500 posts to the queue
+        // Loop to add 500 posts to the queue row
       for (let i = 1; i <= 5000; i++) {
         const postTitle = `${Title}${i}`;
         
@@ -30,7 +30,7 @@ module.exports = {
       }
 
         ctx.body = {
-          message: 'Horray! New blog created successfully'
+          message: 'Horray! New blog created successfully.'
         };
       
     } catch (err) {
