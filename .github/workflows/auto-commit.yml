@@ -37,6 +37,8 @@ jobs:
       - name: Commit and push changes
         if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
+          MESSAGES=("Daily Queue process" "Blog Queue update" "Blog update" "Undo changes" "Clean code" "Process update" "New timestamp added")
+          MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
           git add demo_test.txt
-          git commit -m "Auto-commit: $(date)"
+          git commit -m "$MSG: $(date)"
           git push
